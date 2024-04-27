@@ -1,0 +1,6 @@
+body {
+    background-image: url('/static/img/Agri_3.jpg'); /* Path to your image */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-attachment: fixed; /* Fixed background while scrolling */
+}

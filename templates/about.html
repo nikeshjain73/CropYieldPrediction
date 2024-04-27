@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f5f5f5;
+          /* Change background image URL here */
+          background-image: url("{{url_for('static', filename='img/bg.jpg')}}");
+          /* Set background image size and other properties as needed */
+          background-size: cover;
+          background-position: center;
+      }
+
+      .contain {
+          margin-top: 20px;
+          max-width: 1500px;
+          margin: 0 auto;
+          padding: 2rem;
+          background-color: rgba(255, 255, 255, 0.8); /* Added opacity to background */
+          border-radius: 10px;
+          box-shadow: 0 0 10px #D0D0D0;
+      }
+
+      h1 {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          text-align: center;
+      }
+
+      p {
+          font-size: 1.2rem;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+          text-align: justify;
+      }
+
+      .image-container {
+          text-align: center;
+          margin-bottom: 2rem;
+      }
+
+      .rounded-image {
+          border-radius: 50%;
+          border: 5px solid #fff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      footer {
+          margin-top: 3rem;
+          background-color: #333;
+          color: white;
+          padding: 1rem;
+          text-align: center;
+          width: 100%;
+          position: ;
+          bottom: 0;
+          left: 0;
+      }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Crop Yield Prediction</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/about">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <br>
+    <div class="contain" background="{{url_for('static',filename='img/bg.jpg')}}">
+        <h1>About</h1>
+        <div class="image-container">
+            <img src="your_image_url.jpg" alt="Machine Learning" class="rounded-image" width="200">
+        </div>
+        <p>The use of machine learning techniques to forecast crop yield is examined in this work. We make use of a dataset that contains a variety of variables that could affect yield, such as crop type, weather, and geographic data. Several machine learning models are trained and assessed following data cleaning and pre-processing, which includes resolving missing values, converting data formats, and carrying out feature engineering. Decision tree regression, Lasso regression, Ridge regression, and linear regression are some of these models.</p>
+        <p>The decision tree regression model outperforms the other models in terms of mean absolute error (MAE) and R-squared score on the hold-out test set. Lastly, a prediction function that enables users to enter precise values for the previously mentioned factors and get a projected crop yield is created using the selected model. For later use, the pre-processor and model are also serialized.</p>
+        <p>This strategy provides a data-driven way for predicting crop yield, which may enable farmers to decide on resource allocation and harvest scheduling with knowledge.</p>
+        <br>
+        <h4>Guided by: Abdul Aziz md
+          <br>
+          Master Trainer
+          <br>
+          Edunet Foundation</h4>
+          <h5> Presented By: 
+            <li style="list-style-type: none;">Nikesh Jain</li>
+            <li style="list-style-type: none;">Ayushi Patel</li>
+            <li style="list-style-type: none;">Archi Borad</li>
+            <li style="list-style-type: none;">Prachi Pancholi</li>
+          </h5>
+    </div>
+    <footer>
+        <h2>More Information About Project</h2>
+        <p>This project uses advanced machine learning algorithms to predict crop yields based on various factors such as rainfall, temperature, area, and pesticide usage. The goal is to help farmers make informed decisions and optimize their crop production.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction</title>
+    <link rel="icon" type="image/png" href="path_to_your_favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        
+        form{
+            height: 750px;
+            width: 1000px;
+            background: rgba(255,255,255,.1);
+            text-align: left;
+            align-items: center;
+            border-radius: 5%;
+            box-shadow: 0 5px 15px rgba(0,0,0,.3);
+            border-top: 1px rgba(255,255,255,.3);
+            border-left: 1px rgba(255,255,255,.3);
+            backdrop-filter: blur(10px);
+            transform-style: preserve-3d(20deg);
+            transform-style:preserve-3d(20deg);
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+            }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            /* Change background image URL here */
+            background-image: url("{{url_for('static', filename='img/bg.jpg')}}");
+            /* Set background image size and other properties as needed */
+            background-size: cover;
+            background-position: center;
+        }
+     
+        
+
+        .contain {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background-color: ;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        
+
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: black
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 40rem;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            padding: 0.5rem 2rem;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .output {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            color: white;
+        }
+
+        footer {
+            margin-top: 3rem;
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+            position: ;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Crop Yield Prediction</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="contain" background="{{url_for('static',filename='img/bg.jpg')}}">
+        
+        <form action="/predict" method="post">
+            <h1 class="text-center">Crop Yield Prediction Per Country</h1>
+            <div class="form-group">
+                <label for="Year">Year</label>
+                <input type="number" class="form-control rounded-3" name="Year" step="any" value="2013">
+            </div>
+            <div class="form-group">
+                <label for="average_rain_fall_mm_per_year">Average Rainfall (mm/year)</label>
+                <input type="number" class="form-control rounded-3" name="average_rain_fall_mm_per_year" step="any">
+            </div>
+            <div class="form-group">
+                <label for="pesticides_tonnes">Pesticides (tonnes)</label>
+                <input type="number" class="form-control rounded-3" name="pesticides_tonnes" step="any">
+            </div>
+            <div class="form-group">
+                <label for="avg_temp">Average Temperature (°C)</label>
+                <input type="number" class="form-control rounded-3" name="avg_temp" step="any">
+            </div>
+            <div class="form-group">
+                <label for="Area">Country</label>
+                <input type="text" class="form-control rounded-3" name="Area">
+            </div>
+            <div class="form-group">
+                <label for="Item">Crop</label>
+                <input type="text" class="form-control rounded-3" name="Item">
+            </div>
+            <button type="submit" class="btn btn-info btn-lg mt-2 btn-block">Predict</button>
+        </form>
+        {% if prediction %}
+        <div class="output">
+            <h2 class="text-center"> Predicted Yield: {{prediction}}  (Hectogram/Hectare (Hg/Ha))</h2>
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <h2>More Information About Project</h2>
+        <p>This project uses advanced machine learning algorithms to predict crop yields based on various factors such as rainfall, temperature, area, and pesticide usage. The goal is to help farmers make informed decisions and optimize their crop production.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
