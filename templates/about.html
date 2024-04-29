@@ -48,9 +48,12 @@
       }
 
       .rounded-image {
-          border-radius: 50%;
-          border: 5px solid #fff;
+          border-radius: 10 %;
+          border: 0px solid #212529;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+         
+          
+          
       }
       footer {
           margin-top: 3rem;
@@ -68,7 +71,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">Crop Yield Prediction</a>
+          <a className="navbar-brand" href="/" style="margin-left:30px">
+            <img src="{{url_for('static',filename='img/logo.png')}}" style="mix-blend-mode: ;"alt="" width="80" height="60" class="d-inline-block align-text-top"/></a>
+            <a class="navbar-brand" href="/" style="margin-left:30px">Crop Yield Prediction</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -80,6 +85,9 @@
               <li class="nav-item">
                 <a class="nav-link active" href="/about">About</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -89,7 +97,7 @@
     <div class="contain" background="{{url_for('static',filename='img/bg.jpg')}}">
         <h1>About</h1>
         <div class="image-container">
-            <img src="your_image_url.jpg" alt="Machine Learning" class="rounded-image" width="200">
+            <img src="{{url_for('static',filename='img/logo.png')}}" alt="Machine Learning" class="rounded-image" width="250">
         </div>
         <p>The use of machine learning techniques to forecast crop yield is examined in this work. We make use of a dataset that contains a variety of variables that could affect yield, such as crop type, weather, and geographic data. Several machine learning models are trained and assessed following data cleaning and pre-processing, which includes resolving missing values, converting data formats, and carrying out feature engineering. Decision tree regression, Lasso regression, Ridge regression, and linear regression are some of these models.</p>
         <p>The decision tree regression model outperforms the other models in terms of mean absolute error (MAE) and R-squared score on the hold-out test set. Lastly, a prediction function that enables users to enter precise values for the previously mentioned factors and get a projected crop yield is created using the selected model. For later use, the pre-processor and model are also serialized.</p>
@@ -108,9 +116,12 @@
           </h5>
     </div>
     <footer>
-        <h2>More Information About Project</h2>
-        <p>This project uses advanced machine learning algorithms to predict crop yields based on various factors such as rainfall, temperature, area, and pesticide usage. The goal is to help farmers make informed decisions and optimize their crop production.</p>
-    </footer>
+      <img src="{{url_for('static',filename="img/whitelogo.png")}}" alt="" srcset="" width="120px" height="100px">
+      <h2>More Information About Project</h2>
+      
+      <p class="footer">This project uses advanced machine learning algorithms to predict crop yields based on various factors such as rainfall, temperature, area, and pesticide usage. The goal is to help farmers make informed decisions and optimize their crop production.</p>
+
+  </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
