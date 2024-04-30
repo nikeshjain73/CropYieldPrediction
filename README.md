@@ -25,5 +25,6 @@ Flask is a micro web framework written in Python. It is classified as a microfra
 ## Run Project
 To Run The Program You need to use flask in flask just go to terminal or Direclty run it 
 to run using command 
+
 flask run
 
